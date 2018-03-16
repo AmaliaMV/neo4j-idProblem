@@ -1,0 +1,16 @@
+import neo4jSample.core.Club
+import neo4jSample.core.Person
+
+model {
+    Long clubId
+	Club club
+    Long administratorId
+	Person administrator
+}
+
+json {
+    clubId clubId
+	club g.render(club)
+    administratorId administratorId
+    administrator g.render(administrator)
+}
