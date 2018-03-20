@@ -12,7 +12,10 @@ class ApplicationController {
         Club club = Club.list().first()
         Long administratorId = club.administrator.id
         Person administrator = Person.get(administratorId)
+        Long administratorIdBrackets = club.administrator['id']
+        Person administratorBrackets = Person.get(administratorIdBrackets)
 
-        respond([clubId: club.id, club: club, administratorId: administratorId, administrator: administrator])
+        respond([clubId: club.id, club: club, administratorId: administratorId, administrator: administrator, administratorIdBrackets:
+            administratorIdBrackets, administratorBrackets: administratorBrackets])
     }
 }

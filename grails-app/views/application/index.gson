@@ -6,6 +6,8 @@ model {
 	Club club
     Long administratorId
 	Person administrator
+    Long administratorIdBrackets
+    Person administratorBrackets
 }
 
 json {
@@ -13,4 +15,6 @@ json {
 	club g.render(club)
     administratorId administratorId
     administrator g.render(administrator)
+    administratorIdBrackets administratorIdBrackets
+    administratorBrackets g.render(administratorBrackets)
 }
