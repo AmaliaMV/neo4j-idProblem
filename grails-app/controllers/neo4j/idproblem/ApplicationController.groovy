@@ -10,9 +10,11 @@ class ApplicationController {
     def index() {
 
         Club club = Club.list().first()
-        Long administratorId = club.administrator.id
+        Person admin = club.administrator
+        Long administratorId = admin.id
         Person administrator = Person.get(administratorId)
-        Long administratorIdBrackets = club.administrator['id']
+        Person admin2 = club.administrator
+        Long administratorIdBrackets = admin2['id']
         Person administratorBrackets = Person.get(administratorIdBrackets)
 
         respond([clubId: club.id, club: club, administratorId: administratorId, administrator: administrator, administratorIdBrackets:
